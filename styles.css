@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #003087;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #003087;
+}
+
+.burger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #003087;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px 50px;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./assets/img/pharma-nano-technology.png');
+    background-size: cover;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.cta {
+    padding: 12px 30px;
+    background: #003087;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cta:hover {
+    background: #0041c2;
+    transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+    padding: 80px 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    position: relative;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    color: #666;
+}
+
+/* Images Container */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    gap: 20px;
+}
+
+.section-image {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-image.visible {
+    opacity: 1;
+}
+
+.section-image.left {
+    width: 45%;
+    max-width: 500px;
+}
+
+.section-image.right {
+    width: 45%;
+    max-width: 500px;
+}
+
+/* Grid */
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #003087;
+}
+
+.card .tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #003087;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.card:hover .tooltip {
+    display: block;
+}
+
+/* Team */
+.team .card {
+    text-align: center;
+}
+
+.team .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+/* Stats */
+.stats .card {
+    background: #f9f9f9;
+}
+
+/* Contact */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #003087;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        min-height: 50px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .burger {
+        display: block;
+        font-size: 20px;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        padding: 15px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 70vh;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 40px 20px;
+    }
+
+    .section h2 {
+        font-size: 28px;
+    }
+
+    .section p {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .image-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+    }
+
+    .section-image {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 0;
+    }
+
+    .section-image.left, .section-image.right {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .team .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact form {
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px 10px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .burger {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 6px 0;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .cta {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card .tooltip {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .section-image {
+        max-width: 250px;
+    }
+
+    .team .profile-img {
+        width: 60px;
+        height: 60px;
+    }
+}
